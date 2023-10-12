@@ -55,8 +55,8 @@ model Order {
   productStockId Int
 
   paymentCode String
-  paymentDate DateTime
-  isPaid      Boolean
+  paymentDate DateTime?
+  isPaid      Boolean @default(false)
 
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
