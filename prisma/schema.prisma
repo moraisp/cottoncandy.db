@@ -69,6 +69,6 @@ model Order {
 model Customer {
   phoneNumber Int     @id
   name        String
-  cpf         Int
+  cpf         Int?
   Order       Order[]
 }
