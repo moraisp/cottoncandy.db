@@ -50,17 +50,25 @@ model ProductStock {
 
 model Order {
   id             Int    @id @default(autoincrement())
-  phoneNumber    Int
-  name           String
+  customerPhoneNumber Int
   productStockId Int
 
   paymentCode String
   paymentDate DateTime?
-  isPaid      Boolean @default(false)
+  isPaid      Boolean   @default(false)
 
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
   deletedAt DateTime?
 
   ProductStock ProductStock @relation(fields: [productStockId], references: [id])
+
+  Customer            Customer @relation(fields: [customerPhoneNumber], references: [phoneNumber])
+}
+
+model Customer {
+  phoneNumber Int     @id
+  name        String
+  cpf         Int
+  Order       Order[]
 }
