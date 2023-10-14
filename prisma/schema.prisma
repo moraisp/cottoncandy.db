@@ -84,7 +84,7 @@ model Order {
   paymentDate    DateTime?
   isPaid         Boolean   @default(false)
 
-  closeDate DateTime
+  closeDate DateTime?
   expirationDate DateTime
 
   Customer     Customer       @relation(fields: [customerPhoneNumber], references: [phoneNumber])
