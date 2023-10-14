@@ -73,6 +73,10 @@ model Customer {
   chatId      String
   cpf         Int?
   Order       Order[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
 }
 
 model Order {
@@ -90,4 +94,8 @@ model Order {
 
   Customer     Customer       @relation(fields: [customerPhoneNumber], references: [phoneNumber])
   ProductOrder ProductOrder[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
 }
