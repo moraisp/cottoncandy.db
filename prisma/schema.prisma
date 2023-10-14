@@ -70,6 +70,7 @@ model ProductOrder {
 model Customer {
   phoneNumber Int     @id
   name        String
+  chatId      String
   cpf         Int?
   Order       Order[]
 }
