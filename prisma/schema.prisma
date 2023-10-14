@@ -71,7 +71,7 @@ model Customer {
   phoneNumber String     @id
   name        String
   chatId      String
-  cpf         Int?
+  cpf         String?
   Order       Order[]
 
   createdAt DateTime  @default(now())
