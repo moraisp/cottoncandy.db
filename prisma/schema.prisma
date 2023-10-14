@@ -79,7 +79,7 @@ model Order {
 
   customerPhoneNumber Int
 
-  paymentOrderId Int
+  paymentOrderId Int?
   paymentCode    String?
   paymentDate    DateTime?
   isPaid         Boolean   @default(false)
