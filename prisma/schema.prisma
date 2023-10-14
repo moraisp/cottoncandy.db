@@ -68,7 +68,7 @@ model ProductOrder {
 }
 
 model Customer {
-  phoneNumber Int     @id
+  phoneNumber String     @id
   name        String
   chatId      String
   cpf         Int?
@@ -78,7 +78,7 @@ model Customer {
 model Order {
   guid String @id @default(uuid())
 
-  customerPhoneNumber Int
+  customerPhoneNumber String
 
   paymentOrderId Int?
   paymentCode    String?
